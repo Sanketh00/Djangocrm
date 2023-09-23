@@ -66,10 +66,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'sanketh',
-        'USER': 'root',
-        'PASSWORD': 'root123',
-        'HOST': 'localhost',
-        'PORT': '3306',
+        'USER': 'sankethr',
+        'PASSWORD': 'root@123',
+        'HOST': 'sankethr.mysql.pythonanywhere-services.com',
     }
 }
 
