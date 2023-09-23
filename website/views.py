@@ -42,7 +42,7 @@ def register_user(request):
             password=form.cleaned_data['password1']
             user=authenticate(username=username,password=password)
             login(request,user)
-            messages.sucess(request,"You have Sucessfully registered")
+            messages.success(request,"You have Sucessfully registered")
             return redirect('home')
     else:
         form=SignUpForm()
