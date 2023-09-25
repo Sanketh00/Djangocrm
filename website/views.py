@@ -3,11 +3,16 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from .forms import SignUpForm, AddRecordForm
 from .models import Record
+from django.db.models import Q
+from django.core.paginator import Paginator
+
 # Create your views here.
 
 
 def home(request):
     records=Record.objects.all()
+    queryset=Record.objects.all()
+    
     if request.method=='POST':
         username=request.POST['username']
         password=request.POST['password']
@@ -21,6 +26,17 @@ def home(request):
             messages.success(request,"There was an error logging in please try again")
             return redirect('home')
     else:
+        if request.GET.get('search'):
+            search=request.GET.get("search")
+            records=records.filter(
+                Q(first_name__icontains=search)|
+                Q(last_name__icontains=search)|
+                Q(email__icontains=search))
+            
+
+            return render(request,'home.html',{'records':records})
+        
+
         return render(request,'home.html',{'records':records})
 
 

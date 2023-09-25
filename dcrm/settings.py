@@ -13,8 +13,8 @@ SECRET_KEY = 'django-insecure-jcxge@8cwms-4-$&qia^6p+^8-qwrsw7vey#0e6e326apg3mvo
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['sankethr.pythonanywhere.com']
-
+# ALLOWED_HOSTS = ['sankethr.pythonanywhere.com']
+ALLOWED_HOSTS = []
 
 # Application definition
 
@@ -61,6 +61,14 @@ WSGI_APPLICATION = 'dcrm.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
+# 'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'sanketh',
+#         'USER': 'root',
+#         'PASSWORD': 'root123',
+#         'HOST': 'localhost',
+#         'PORT':'3306'
+#     }
 
 DATABASES = {
     'default': {
@@ -70,7 +78,16 @@ DATABASES = {
         'PASSWORD': 'root@123',
         'HOST': 'sankethr.mysql.pythonanywhere-services.com',
     }
+    
+    
 }
+# 'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'sankethr$default',
+#         'USER': 'sankethr',
+#         'PASSWORD': 'root@123',
+#         'HOST': 'sankethr.mysql.pythonanywhere-services.com',
+#     }
 
 
 # Password validation
