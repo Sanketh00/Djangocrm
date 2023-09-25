@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
+{% if user.is_authenticated %}
 <div class="mx-auto col-6">
   <form>
     <div class="mb-3">
